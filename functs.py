@@ -1,9 +1,9 @@
 import os
-
 class generate:
+
     def __init__(self):
         prefs = ['052', '054', '051', '058']
-        body = range(0, 9999999)
+        body = range(0, 9)
         otpname = 'phones.log'
         otpdir = os.path.abspath(os.curdir)
         self.phonegen(prefs, body,otpdir,otpname)
