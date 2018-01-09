@@ -1,13 +1,11 @@
 import os
 class generate:
-
     def __init__(self):
-        prefs = ['052', '054', '051', '058']
-        body = range(0, 9)
-        otpname = 'phones.log'
-        otpdir = os.path.abspath(os.curdir)
-        self.phonegen(prefs, body,otpdir,otpname)
-
+        self.prefs = ['052', '054', '051', '058']
+        self.body = range(0, 9)
+        self.otpname = 'phones.log'
+        self.otpdir = os.path.abspath(os.curdir)
+        self.phonegen(self.prefs, self.body,self.otpdir,self.otpname)
 
     def phonegen(self,prefs,body,otpdir,otpname):
         fh = open(os.path.join(otpdir, otpname), 'w')
@@ -21,6 +19,5 @@ class generate:
 
 
 rt=generate()
-
 
 
