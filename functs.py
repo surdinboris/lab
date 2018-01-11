@@ -21,3 +21,4 @@ class generate:
 rt=generate()
 
 
+rt
