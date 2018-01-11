@@ -1,4 +1,5 @@
 class lam:
+    y=0
     def __init__(self, *args, **kwargs):
         self.t=args
         print(self.t)
@@ -9,10 +10,9 @@ class lam:
         print(self.eec)
         return(args,kwargs)
 
-gh=lam
-gh().__init__('sfsdsfasddasdasda')
-gh().imports('dfg',u="data")
-print(id(gh))
-ty=(gh().imports('dfg',u="newdta"))
-print(id(ty))
-#print('retrieving',gh.u)
+gh=lam('uu')
+
+print(type(gh))
+gh.t=6
+
+print(gh.t)
