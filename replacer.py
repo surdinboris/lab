@@ -9,5 +9,5 @@ for row in rows:
     match=searchp.match(row)
     if match:
         print(match)
-    #counter+=1
-#print(counter)
+        counter+=1
+print(counter)
