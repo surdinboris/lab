@@ -3,6 +3,7 @@ import os
 
 debug=False
 
+
 tmplt=open(os.path.join(os.getcwd(),'_template.txt'),'r', encoding="utf-8")
 outptmplt=open(os.path.join(os.getcwd(),'_otemplate.txt'),'w', encoding="utf-8")
 rows = tmplt.readlines()
@@ -72,7 +73,9 @@ def tagsanalyze(row,oneliner):
     elif len(oneliner) == 0:
         rowexclude(row, rowtype=4)
 
-
+#script init
 for row in rows:
     counter += 1
     tagscollect(row)
+tmplt.close()
+outptmplt.close()
