@@ -9,7 +9,7 @@ def collectpaths(targdir):
     dirlist = [name for name in os.listdir(targdir) if os.path.isdir(os.path.join(targdir, name))]
     for name in os.listdir(targdir):
         curfile=os.path.join(targdir, name)
-        if not os.path.isdir(curfile):
+        if os.path.isfile(curfile):
             filelist.append(curfile)
         else:
             collectpaths(os.path.join(targdir, name))
