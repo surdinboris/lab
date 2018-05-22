@@ -6,7 +6,6 @@ debug=False
 
 tmplt=open(os.path.join(os.getcwd(),'_template.txt'),'r', encoding="utf-8")
 outptmplt=open(os.path.join(os.getcwd(),'_otemplate.txt'),'w', encoding="utf-8")
-rows = tmplt.readlines()
 #patterns
 searchop=re.compile(r".*<todo.*>")
 searchcl=re.compile(r".*</todo.*>")
@@ -46,16 +45,16 @@ def rowexclude(row,rowtype):
         print('improper rowtype error')
 
 def tagscollect(row):
-    oneliner = {}
+    tagsclctr = {}
     if match(searchop,row):
         if debug == True:
             print(match(searchop,row), 'open tag in row %d' %counter )
-        oneliner['opened'] = counter
+        tagsclctr['opened'] = counter
     if match(searchcl, row):
         if debug == True:
             print(match(searchcl, row), 'closed tag in row %d' %counter )
-        oneliner['closed'] = counter
-    return tagsanalyze(row, oneliner)
+        tagsclctr['closed'] = counter
+    return tagsanalyze(row, tagsclctr)
 
 def tagsanalyze(row,oneliner):
     if len(oneliner)== 2 and oneliner['opened'] == oneliner['closed']:
@@ -74,7 +73,8 @@ def tagsanalyze(row,oneliner):
         rowexclude(row, rowtype=4)
 
 #script init
-for row in rows:
+
+for row in tmplt.readlines():
     counter += 1
     tagscollect(row)
 tmplt.close()
