@@ -12,7 +12,11 @@ def phonegen(prefs,body):
     fh.close()
 print("Building phonelist in: %s..." %fh.name)
 
-phonegen(prefs,body)
+#phonegen(prefs,body)
 
 print('Done.')
 
+rr= [6,7,8,4,3]
+rrt=filter((lambda x: x<6),rr)
+for r in rrt:
+    print(r)
